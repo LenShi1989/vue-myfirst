@@ -38,7 +38,7 @@ export default {
       console.log(3);
       alert(tel);
     }
-    // 將數據、方法交出去，模板中才可以使用
+
     return {
       name,
       age,
@@ -46,9 +46,6 @@ export default {
       changeAge,
       showTel,
     };
-
-    // setup的返回值也可以是一個渲染函數
-    // return () => "哈哈";
   },
 };
 </script>
