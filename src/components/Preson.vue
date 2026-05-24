@@ -5,6 +5,10 @@
     <button @click="changeName">修改姓名</button>
     <button @click="changeAge">修改年龄</button>
     <button @click="showTel">查看聯繫方式</button>
+    <hr />
+    <h2>測試1:{{ a }}</h2>
+    <h2>測試2:{{ c }}</h2>
+    <button @click="b">測試3</button>
   </div>
 </template>
 
@@ -13,6 +17,18 @@ export default {
   name: "Person",
   beforeCreate() {
     console.log("beforeCreate");
+  },
+  data() {
+    return {
+      a: 100,
+      c: this.name,
+      d: 900,
+    };
+  },
+  methods: {
+    b() {
+      console.log("b");
+    },
   },
   setup() {
     console.log("setup");
