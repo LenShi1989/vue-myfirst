@@ -11,7 +11,7 @@
 
 <!-- <script lang="ts">
 export default {
-07_ref創建基本類型的響應式數據  name: "Person",
+  name: "Person",
 };
 </script> -->
 
