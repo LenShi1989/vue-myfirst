@@ -8,8 +8,7 @@
     <hr />
     <h2>測試1:{{ a }}</h2>
     <h2>測試2:{{ c }}</h2>
-    <h2>測試3:{{ d }}</h2>
-    <button @click="b">測試</button>
+    <button @click="b">測試3</button>
   </div>
 </template>
 
