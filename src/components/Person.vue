@@ -1,6 +1,6 @@
 <template>
   <div class="person">
-    <h1>情況二: 監視【ref】定義的【對象類型】數據</h1>
+    <h1>情況三: 監視【reactive】定義的【對象類型】數據</h1>
     <h2>姓名:{{ person.name }}</h2>
     <h2>年齡:{{ person.age }}</h2>
     <button @click="changeName">修改姓名</button>
@@ -10,41 +10,30 @@
 </template>
 
 <script lang="ts" setup name="Person">
-import { ref, watch } from "vue";
+import { reactive, watch } from "vue";
 // 數據
-let person = ref({
+let person = reactive({
   name: "Len",
   age: 37,
 });
 
 // 方法
 function changeName() {
-  person.value.name += "~ ";
+  person.name += "~ ";
 }
 function changeAge() {
-  person.value.age += 1;
+  person.age += 1;
 }
 function changePerson() {
-  person.value = {
+  Object.assign(person, {
     name: "李四",
-    age: 90,
-  };
+    age: 80,
+  });
 }
 
-/*
-監視, 情況二: 監視【ref】定義的【對象類型】數據, 監視的是對象的地址值, 若想監視對象內部的屬性值變化, 需要手動開啟深度監視
-watch的第一個參數是: 被監視的數據
-watch的第二個參數是: 監視的回調
-watch的第三個參數是: 配置對象(deep、 immediate等等...)
-*/
-
-watch(
-  person,
-  (newValue, oldValue) => {
-    console.log("person變化了", newValue, oldValue);
-  },
-  { deep: true, immediate: true },
-);
+watch(person, (newValue, oldValue) => {
+  console.log("person變化了", newValue, oldValue);
+});
 </script>
 
 <style scoped>
