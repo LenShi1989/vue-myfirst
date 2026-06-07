@@ -1,5 +1,6 @@
 <template>
   <div class="person">
+    <h1>情況五: 監視上述的多個數據</h1>
     <h2>姓名: {{ person.name }}</h2>
     <h2>年齡: {{ person.age }}</h2>
     <h2>汽車: {{ person.car.c1 }}、{{ person.car.c2 }}</h2>
@@ -44,19 +45,9 @@ function changeCar() {
   };
 }
 
-// 監視, 情況四: 監視響應式對象中的某個屬性, 且該屬性時基本類型的, 要寫成函數式
-// watch(
-//   () => {
-//     return person.name;
-//   },
-//   (newValue, oldValue) => {
-//     console.log("person變化了", newValue, oldValue);
-//   },
-// );
-
-// 監視, 情況四: 監視響應式對象中的某個屬性, 且該屬性是對象類型的, 可以直接寫, 也能寫函數, 更推薦寫函數
+// 監視, 情況五: 監視上述的多個數據
 watch(
-  () => person.car,
+  [() => person.name, () => person.car.c1],
   (newValue, oldValue) => {
     console.log("person.car變化了", newValue, oldValue);
   },
