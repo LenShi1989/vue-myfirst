@@ -1,5 +1,8 @@
 <template>
   <div class="person">
+    <h1>
+      情況四: 監視響應式對象中的某個屬性, 且該屬性時基本類型的, 要寫成函數式
+    </h1>
     <h2>姓名: {{ person.name }}</h2>
     <h2>年齡: {{ person.age }}</h2>
     <h2>汽車: {{ person.car.c1 }}、{{ person.car.c2 }}</h2>
