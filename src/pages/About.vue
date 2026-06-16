@@ -4,7 +4,17 @@
   </div>
 </template>
 
-<script setup lang="ts" name="About"></script>
+<script setup lang="ts" name="About">
+import { onMounted, onUnmounted } from "vue";
+
+onMounted(() => {
+  console.log("About組件掛載了");
+});
+
+onUnmounted(() => {
+  console.log("About組件卸載了");
+});
+</script>
 
 <style scoped>
 .about {
