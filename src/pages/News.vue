@@ -55,7 +55,7 @@ const newsList = reactive([
 
 .news ul {
   margin-top: 30px;
-  list-style: none;
+  /* list-style: none; */
   padding-left: 10px;
 }
 
